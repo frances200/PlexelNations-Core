@@ -1,0 +1,17 @@
+name: PlexelNations
+version: '${project.version}'
+main: org.plexelnations.plexelnations.Main
+api-version: 1.16
+authors: [PlexelMC]
+softdepend: [Factions, WorldGuard]
+description: The core plugin for PlexelNations
+website: plexelmc.net
+commands:
+  nations:
+    usage: /nations [help]
+    aliases: [n, nation]
+    description: Displays help
+  town:
+    usage: /town [create]
+    aliases: [ towns, t ]
+    description: Town management

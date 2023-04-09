@@ -1,0 +1,32 @@
+#--------------------------------
+#PlexelMC Core - Nations
+#--------------------------------
+nations:
+  nation1:
+    name: Crimson Legion
+    color: RED
+  nation2:
+    name: Oceanic Empire
+    color: BLUE
+  nation3:
+    name: Forest Realm
+    color: GREEN
+  nation4:
+    name: Golden Alliance
+    color: YELLOW
+
+#--------------------------------
+#PlexelMC Core - Configuration
+#--------------------------------
+config:
+  autosave-interval: 10 #minutes
+
+#--------------------------------
+#PlexelMC Core - Messages
+#--------------------------------
+messages:
+  join_nation: "&7You have joined the %c%s!"
+  already_in_nation: "&cYou are already in %c%s&c!"
+  incorrect_faction_nation: "&cYou are not in the correct nation!"
+  join_nation_first: "&cPlease join a nation before creating a faction, use &7/nations join <nation>"
+  friendly_fire: "&cPlease don't try to damage teammates"
