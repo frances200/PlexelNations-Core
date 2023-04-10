@@ -3,6 +3,7 @@ package org.plexelnations.plexelnations;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.ipvp.canvas.MenuFunctionListener;
 import org.plexelnations.plexelnations.commands.CommandExecutor;
 import org.plexelnations.plexelnations.commands.JoinCommand;
 import org.plexelnations.plexelnations.commands.town.CreateTownCommand;
@@ -42,6 +43,7 @@ public final class Main extends JavaPlugin {
         final int saveTicks = ConfigFile.getAutosaveInterval() * 20 * 60;
         Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new AutosaveTask(), saveTicks, saveTicks);
         Bukkit.getPluginManager().registerEvents(new NEvents(), this);
+        Bukkit.getPluginManager().registerEvents(new MenuFunctionListener(), this);
         Logger.getInstance().success(LOG_PLUGIN_ENABLED);
     }
 

@@ -3,6 +3,7 @@ package org.plexelnations.plexelnations.commands;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
+import org.plexelnations.plexelnations.gui.TownsMenu;
 import org.plexelnations.plexelnations.models.Command;
 
 import java.util.ArrayList;
@@ -25,6 +26,10 @@ public class CommandExecutor implements org.bukkit.command.CommandExecutor {
         Player player = (Player) commandSender;
 
         if (strings.length == 0) {
+            if (command.getName().equalsIgnoreCase("town")) {
+                new TownsMenu().displayMenu(player);
+                return true;
+            }
             return displayHelp(player);
         }
 

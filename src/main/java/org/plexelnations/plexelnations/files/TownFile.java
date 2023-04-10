@@ -92,7 +92,8 @@ public class TownFile extends DataFile {
                 getFloat(getDefaultSection()+id+".spawn-location.yaw"),
                 getFloat(getDefaultSection()+id+".spawn-location.pitch"));
 
-        builder.displayName(getData(getDefaultSection() + id + ".display-name").toString())
+        builder.id(id)
+                .displayName(getData(getDefaultSection() + id + ".display-name").toString())
                 .bank(getLong(getDefaultSection() + id + ".bank"))
                 .nation(Nations.valueOf(getData(getDefaultSection() + id + ".nation").toString()))
                 .tier(getInteger(getDefaultSection() + id + ".tier"))
@@ -126,6 +127,6 @@ public class TownFile extends DataFile {
                     getFloat(getDefaultSection()+id+".spawn-locations-defend."+location+".pitch"));
             defendLocations.add(defendLocation);
         }
-        builder.attackSpawnLocations(defendLocations);
+        builder.defendSpawnLocations(defendLocations);
     }
 }
