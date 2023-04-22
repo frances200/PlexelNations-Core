@@ -4,9 +4,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.ipvp.canvas.MenuFunctionListener;
-import org.plexelnations.plexelnations.commands.CommandExecutor;
-import org.plexelnations.plexelnations.commands.JoinCommand;
-import org.plexelnations.plexelnations.commands.town.CreateTownCommand;
+import org.plexelnations.plexelnations.commands.nation.NationCommand;
+import org.plexelnations.plexelnations.commands.town.TownCommand;
 import org.plexelnations.plexelnations.models.NPlayer;
 import org.plexelnations.plexelnations.models.Town;
 import org.plexelnations.plexelnations.models.enums.Message;
@@ -14,6 +13,7 @@ import org.plexelnations.plexelnations.models.enums.Nations;
 import org.plexelnations.plexelnations.tasks.AutosaveTask;
 import org.plexelnations.plexelnations.util.ConfigFile;
 import org.plexelnations.plexelnations.util.Logger;
+import org.plexelnations.plexelnations.util.Wars;
 
 public final class Main extends JavaPlugin {
 
@@ -35,10 +35,10 @@ public final class Main extends JavaPlugin {
         Town.load();
 
         Logger.getInstance().info(LOG_REGISTER_COMMANDS);
-        CommandExecutor.commands.add(new JoinCommand());
-        CommandExecutor.commands.add(new CreateTownCommand());
-        this.getCommand("nations").setExecutor(new CommandExecutor());
-        this.getCommand("town").setExecutor(new CommandExecutor());
+        this.getCommand("nations").setExecutor(new NationCommand());
+        this.getCommand("town").setExecutor(new TownCommand());
+
+        Wars.getInstance().init(this);
 
         final int saveTicks = ConfigFile.getAutosaveInterval() * 20 * 60;
         Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new AutosaveTask(), saveTicks, saveTicks);

@@ -7,10 +7,10 @@ import org.ipvp.canvas.Menu;
 import org.ipvp.canvas.mask.BinaryMask;
 
 public abstract class ChestMenu {
-    private final String title;
-    private final int menuSize;
-    private final boolean border;
-    private final Material borderMaterial;
+    public final String title;
+    public final int menuSize;
+    public final boolean border;
+    public final Material borderMaterial;
 
     public static final int[] PLACEABLE_SLOTS = {
             10, 11, 12, 13, 14, 15, 16,
